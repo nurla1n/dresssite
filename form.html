@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      box-sizing: border-box;
+    
+    }
+    body {
+      margin:0;
+
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    h2 {
+      margin:50px;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      color:red;
+      font-size:35px;
+      letter-spacing: 3px;
+      word-spacing:10px;
+    }
+    .parent {
+      background-color:blueviolet;
+      width:100%;
+      padding:25px;
+      margin:0;
+    
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      
+      align-items: center;
+
+
+    }
+    label,.sual {
+      color:white;
+      font-size:22px;
+      letter-spacing: 1.2px;
+    
+      
+    }
+    .buttonParent {
+        margin-top:50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+    }
+    button {
+     
+      background-color:white;
+      color:black;
+      border-radius:10px;
+      font-size:16px;
+      border:1px solid white;
+      cursor: pointer;
+      padding:10px 20px;
+     font-size:20px
+    }
+    button:hover {
+        background-color:blue;
+        color:white;
+      
+              
+    }
+     input {
+        margin-left:30px;
+        accent-color:blue;
+     }
+    .son {
+      color:black;
+      text-align:center;
+      font-size:25px;
+      color:white;
+      font-family: Arial, Helvetica, sans-serif;
+
+
+    }
+    .nur {
+        /* border:1px solid black; */
+        width:600px;
+        margin-top:20px;
+        line-height: 30px;
+    }
+    label,input {
+        cursor:pointer
+    }
+@media only screen and (max-width:800px) {
+    label,.sual {
+      color:white;
+      font-size:18px;
+    }
+    form {
+        display: flex;
+      flex-direction: column;
+      flex-wrap:wrap;
+      align-items: flex-start;
+    
+    }
+    .parent {
+        width:100%;
+       
+    }
+    .nur {
+        width:100%;
+    }
+    body {
+        padding:0;
+        margin:0;
+    }
+    .buttonParent {
+        
+        width:100%
+    }
+}
+  </style>
+</head>
+<body>
+  <div>
+    <section id="heading">
+        <h2>A survey about our store</h2>
+       
+    </section>
+   
+  </div>
+  <div class="parent">
+    <form>
+      <div class="nur">
+      <p class="sual">1.Are you satisfied with the quality of the clothes we sell?</p>
+     <input type="radio" id="birinci1" value="Yes" name="first">
+     <label for="birinci1">Yes</label>
+     <input type="radio" id="birinci2" value="No" name="first">
+     <label for="birinci2">No</label>
+    </div >
+    <div class="nur">
+      <p class="sual">2.Are you satisfied with the service provided to the customer?</p>
+     <input type="radio" id="ikinci1" value="Yes" name="second">
+     <label for="ikinci1">Yes</label>
+     <input type="radio" id="ikinci2" value="No" name="second">
+     <label for="ikinci2">No</label>
+    </div>
+    <div class="nur">
+      <p class="sual">3.Are you satisfied with the price of the clothes?</p>
+     <input type="radio" id="ucuncu1" value="Yes" name="third">
+     <label for="ucuncu1">Yes</label>
+     <input  type="radio" id="ucuncu2" value="No" name="third">
+     <label for="ucuncu2">No</label>
+    </div>
+    <div class="nur">
+      <p class="sual">4.Are you satisfied with the location of our shop?</p>
+     <input type="radio" id="dorduncu1" value="Yes" name="fourth">
+     <label for="dorduncu1">Yes</label>
+     <input  type="radio" id="dorduncu2" value="No" name="fourth">
+     <label for="dorduncu2">No</label>
+    </div>
+    <div class="buttonParent">  <button>
+      Submit</button></div>
+      <p class="son"></p>
+    </form>
+
+  </div>
+ 
+  <script>
+  let son=document.querySelector('.son')
+    let submit=document.querySelector('button');
+    let form=document.querySelector('form');
+    submit.addEventListener('click',e=>{
+    
+      let output='';
+      let counter=0;
+      let massiv=[]
+      const formdata=new FormData(form);
+      for(let data of formdata){
+      output+=data[1]+' ';
+      massiv.push(output);
+      }
+      const split= massiv[massiv.length-1].split(' ');
+      for(let i=0;i<split.length;i++){
+       if(split[i]=='Yes'){
+        counter+=25
+       }
+
+      }
+      console.log(counter)
+       if(counter==100){
+        son.innerHTML='You are 100% satisfied with our store. Thank you for participating in the survey'
+       }
+       else {
+        son.innerHTML=`You are ${counter}% satisfied with our store.We will solve our problem. Thank you for participating in the survey`
+       }
+       
+       event.preventDefault()
+  
+    })
+  
+
+  </script>
+</body>
+</html>
