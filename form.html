@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" 
+  content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      box-sizing: border-box;
+    
+    }
+    body {
+      margin:0;
+
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    h2 {
+      margin:50px;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      color:red;
+      font-size:35px;
+      letter-spacing: 3px;
+      word-spacing:10px;
+    }
+    .parent {
+      background-color:blueviolet;
+      width:100%;
+      padding:25px;
+      margin:0;
+    
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      
+      align-items: center;
+
+
+    }
+    label,.sual {
+      color:white;
+      font-size:28px;
+      letter-spacing: 1.2px;
+    
+      
+    }
+    .buttonParent {
+        margin-top:20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+    }
+    button {
+     
+      background-color:white;
+      color:black;
+      border-radius:10px;
+      font-size:16px;
+      border:1px solid white;
+      cursor: pointer;
+      padding:10px 20px;
+     font-size:20px
+    }
+    button:hover {
+        background-color:blue;
+        color:white;
+      
+              
+    }
+     input {
+        margin-left:30px;
+        accent-color:blue;
+     }
+    .son {
+      margin-top:50px;
+      color:black;
+      text-align:center;
+      font-size:25px;
+      color:white;
+      font-family: Arial, Helvetica, sans-serif;
+
+
+    }
+    .group {
+   
+        width:800px;
+        margin-top:10px;
+        line-height: 40px;
+    }
+    label,input {
+        cursor:pointer
+    }
+@media only screen and (max-width:800px) {
+    label,.sual {
+      color:white;
+      font-size:18px;
+    }
+    form {
+        display: flex;
+      flex-direction: column;
+      flex-wrap:wrap;
+      align-items: flex-start;
+    
+    }
+    .parent {
+        width:100%;
+       
+    }
+    .group {
+    
+        width:100%;
+    }
+    body {
+        padding:0;
+        margin:0;
+    }
+    .buttonParent {
+        
+        width:100%
+    }
+}
+  </style>
+</head>
+<body>
+  <div>
+    <section id="heading">
+        <h2>A survey about our store</h2>
+       
+    </section>
+   
+  </div>
+  <div class="parent">
+    <form>
+      <div class="group">
+      <p class="sual">1.Are you satisfied with the quality of the clothes we sell?</p>
+     <input type="radio" id="birinci1" value="Yes" name="first">
+     <label for="birinci1">Yes</label>
+     <input type="radio" id="birinci2" value="No" name="first">
+     <label for="birinci2">No</label>
+    </div >
+    <div class="group">
+      <p class="sual">2.Are you satisfied with the service provided to the customer?</p>
+     <input type="radio" id="ikinci1" value="Yes" name="second">
+     <label for="ikinci1">Yes</label>
+     <input type="radio" id="ikinci2" value="No" name="second">
+     <label for="ikinci2">No</label>
+    </div>
+    <div class="group">
+      <p class="sual">3.Are you satisfied with the price of the clothes?</p>
+     <input type="radio" id="ucuncu1" value="Yes" name="third">
+     <label for="ucuncu1">Yes</label>
+     <input  type="radio" id="ucuncu2" value="No" name="third">
+     <label for="ucuncu2">No</label>
+    </div>
+    <div class="group">
+      <p class="sual">4.Are you satisfied with the location of our shop?</p>
+     <input type="radio" id="dorduncu1" value="Yes" name="fourth">
+     <label for="dorduncu1">Yes</label>
+     <input  type="radio" id="dorduncu2" value="No" name="fourth">
+     <label for="dorduncu2">No</label>
+    </div>
+    <p class="son"></p>
+    <div class="buttonParent">  <button>
+      Submit</button></div>
+ 
+    </form>
+
+  </div>
+ 
+  <script>
+  let son=document.querySelector('.son')
+    let submit=document.querySelector('button');
+    let form=document.querySelector('form');
+    submit.addEventListener('click',e=>{
+    
+      let output='';
+      let counter=0;
+      let massiv=[]
+      const formdata=new FormData(form);
+      for(let data of formdata){
+      output+=data[1]+' ';
+      massiv.push(output);
+      }
+      const split= massiv[massiv.length-1].split(' ');
+      for(let i=0;i<split.length;i++){
+       if(split[i]=='Yes'){
+        counter+=25
+       }
+
+      }
+      console.log(counter)
+       if(counter==100){
+        son.innerHTML='You are 100% satisfied with our store. Thank you for participating in the survey'
+       }
+       else {
+        son.innerHTML=`You are ${counter}% satisfied with our store.We will solve our problem. Thank you for participating in the survey`
+       }
+       event.preventDefault()
+  
+    })
+  
+</script>
+/*
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="1.css">
+
+</head>
+<body>
+  <div class="first">
+  <div class="title">
+    <h1>M-SoftTech</h1>
+    <div>☰</div>
+  </div>
+  <div class="list">
+    <li><a href="#">Dashboard</a></li>
+    <li><a href="#">Charts</a></li>
+    <li><a href="#">Projects</a></li>
+    <li><a href="#">Orders</a></li>
+    <li><a href="#">Inventory</a></li>
+    <li><a href="#">Accounts</a></li>
+    <li><a href="#">Tasks</a></li>
+    <li><a href="#">Notfications</a></li>
+    <li><a href="#">Icons</a></li>
+  </div>
+</div>
+<div class="second">
+<div class="dashboard">
+  <p>Dashboard</p>
+  <div class="dashboard1">
+  <button><i style="font-size:20px" class="fa">&#xf002;</i></button>
+<button><i style="font-size:20px" class="fa">&#xf0f3;</i></button>
+<div class="login">
+  <img src="https://images.unsplash.com/photo-1566275529824-cca6d008f3da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGhvdG98ZW58MHx8MHx8fDA%3D&w=1000&q=80" alt="">
+<p>Manoj Adkari</p>
+</div>
+</div>
+</div>
+
+<div class="cardsgeneral">
+<div class="cards">
+<div class="cardsfirst">
+  <p>Sales</p>
+  <p>67343</p>
+  <p><span style="color:green">5.674%</span> Since Last Months</p>
+<div style="position: absolute;top:10px;right:10px">
+  <i style="font-size:24px" class="fa">&#xf201;</i>
+</div>
+</div>
+<div class="cardsfirst">
+  <p>purchases</p>
+  <p>2343</p>
+  <p><span style="color:red">5.674%</span> Since Last Months</p>
+<div style="position: absolute;top:10px;right:10px">
+  <i style="font-size:24px;" class="fa fa-circle-o-notch" aria-hidden="true"></i>
+</div>
+</div>
+<div class="cardsfirst">
+  <p>orders</p>
+  <p>35343</p>
+  <p><span style="color:green">5.674%</span> Since Last Months</p>
+<div style="position: absolute;top:10px;right:10px">
+  <i style="font-size:24px" class="fa fa-shopping-bag" aria-hidden="true"></i>
+</div>
+</div>
+</div>
+
+<div class="cards">
+<div class="cardssecond">
+  <p style="font-size: 20px;">Overview</p>
+  <div class="sectionall">
+    <div class="section">
+      <div class="sectionlist">
+        <p>Member Profit</p>
+        <p>Last Months</p>
+      </div>
+      <div>
+        <p>+2343</p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="sectionlist">
+        <p>Member Profit</p>
+        <p>Last Months</p>
+      </div>
+      <div>
+        <p>+2343</p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="sectionlist">
+        <p>Member Profit</p>
+        <p>Last Months</p>
+      </div>
+      <div>
+        <p>+2343</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="cardssecond">
+  <p class="total">Total Sale</p>
+  <img class="sekil" src="./Screenshot 2023-05-20 224851.png" alt="">
+  <div style="position: absolute;top:25px;right:25px">
+  <button class="viewall">View All</button>
+  </div>
+</div>
+<div class="cardssecond">
+  <p class="total">Activity</p>
+  <div class="btnandp">
+    <button class="circle"> </button>
+    <p class="cardson">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem itaque similique magni!</p>
+  </div>
+  <div class="btnandp">
+    <button style="background-color: red;" class="circle"> </button>
+    <p class="cardson">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem itaque similique magni!</p>
+  </div>
+  <div class="btnandp">
+    <button style="background-color:green" class="circle"> </button>
+    <p class="cardson">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem itaque similique magni!</p>
+  </div>
+  <div class="btnandp">
+    <button style="background-color:orange" class="circle"> </button>
+    <p class="cardson">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem itaque similique magni!</p>
+  </div>
+
+  
+  <div style="position: absolute;top:25px;right:25px">
+    <button class="viewall">View All</button>
+    </div>
+</div>
+
+</div>
+</div>
+
+
+<div class="tablediv">
+  <p>Top Selling Projects</p>
+  <table>
+    <tr>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Centro comercial Moctezuma</td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+    </tr>
+    <tr>
+      <td>Ernst Handel</td>
+      <td>Roland Mendel</td>
+      <td>Austria</td>
+    </tr>
+    <tr>
+      <td>Island Trading</td>
+      <td>Helen Bennett</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Giovanni Rovelli</td>
+      <td>Italy</td>
+    </tr>
+  </table>
+  <div style="position: absolute;top:25px;right:25px">
+    <button class="viewall">View All</button>
+    </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+$(document).ready(function(){
+  $('.title div').click(function(){
+    $('.title h1').toggle(100)
+    $('.list').toggle(100)
+   if($('.first').width()=='350'){
+    $('.first').animate({width:'80px'})
+    $('.second').animate({'margin-left':'100px'})
+   }
+   else {
+  $('.first').animate({width:'350px'})
+  $('.second').animate({'margin-left':'350px'})
+
+  
+   }
+ 
+  })
+})
+
+
+</script>
+</body>
+</html>
+*/
+</body>
+</html>
+

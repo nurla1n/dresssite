@@ -1,0 +1,507 @@
+* {
+    box-sizing:border-box;
+}
+ body {
+    margin:0;
+   padding:0;
+   background-color: rgb(128, 128, 128, 0.4);
+background-image: linear-gradient(to left,red,blue);
+ }
+ html {
+    scroll-behavior: smooth;
+ }
+.navbar {
+    position:sticky;
+    top:0;
+    list-style-type:none;
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    background-color:black;
+    padding:0;
+    margin:0;
+    justify-content:flex-start;
+    z-index:1
+}
+li a {
+    text-decoration:none;
+    display:block;
+    padding:14px 30px;
+    color:white;
+    font-size:23px;
+
+}
+
+li a:hover {
+    background-color:blue;
+    color:black;
+    text-decoration: none;
+    color:white;
+
+}
+
+.child {
+    position:absolute;
+    top:53px;
+    background-color:red;
+    width:233px;
+    display:none
+   
+}
+
+.childwomenmenkids{
+    display:none;
+    
+}
+.childwomenmenkids a {
+    font-size:23px;
+    display:block;
+    padding:20px 30px;
+}
+.navbarchild:hover .childwomenmenkids {
+    position:absolute;
+    top:0px;
+    background-color:black;
+    width:225px;
+    left:233px;
+    display:block;
+}
+.nur {
+   text-decoration:none;
+   color:white;
+   display:block;
+   padding:14px 15px;
+    
+}
+.list:hover .child {
+    display:block;
+    cursor:pointer;
+}
+
+
+
+/* 
+.home {
+   margin-top:20px;
+} */
+
+.heading {
+    width:100%;
+    height:300px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.headingp {
+  
+letter-spacing: 3px;;
+font-size: 24px;
+margin-bottom: 40px;
+text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.text-type {
+font-size:57px;
+text-shadow: 0px 0px 1px;
+letter-spacing: 3px;
+text-shadow:0px 0px 1px;
+font-family:cursive;
+color:white
+}
+
+.typed-cursor {
+display:none}
+
+
+.mySlides {display: none}
+
+img {vertical-align: middle;
+width:100%;}
+
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+ 
+ margin:0;
+  border:1px solid black;
+
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+@media only screen and (max-width:700px){
+
+body {
+margin:0;
+padding:0;
+}
+.flex {
+width:100%;}
+li a {
+    text-decoration:none;
+    display:block;
+    padding:15px 13px;
+    color:white;
+    font-size:17px;
+
+}  
+.child {
+    top:47px;
+    width:100px;
+}
+.navbarchild:hover .childwomenmenkids {
+    display:none;
+}
+.text-type {
+font-size:35px;
+text-shadow: 0px 0px 1px;
+letter-spacing: 3px;
+text-shadow:0px 0px 1px;
+font-family:cursive
+}
+.cardsfullwomen,.cardsfullmen,.cardsfullkids {
+
+display:flex;
+flex-direction: column;
+row-gap:50px;
+padding:30px 1px !important;
+background-image: linear-gradient(#e66465, #9198e5);
+                
+}
+
+@media only screen and (max-width:1000px){
+    .spring2023 {
+        display:flex;
+        flex-direction: column !important;
+    }
+    .spring2023div1,.spring2023div2,.spring2023div3 {
+        width:100% !important;
+        
+     }
+    .spring2023div1 {
+        height:360px !important;
+         align-items: center !important;
+        justify-content: center !important;
+        
+        } 
+        .spring2023div1 p {
+            margin: 40px 30px 0px 0px !important;
+           
+         }
+         .spring2023div1 button {
+        
+             margin-top:30px !important;
+             margin-bottom:30px !important
+         }
+         .spring2023div3 {
+           height:300px !important;
+            justify-content: center;
+            align-items: center;
+            background-color: #dec79b;
+            }
+}
+
+}
+
+.spring2023 {
+    display:flex;
+    flex-direction: row;
+    border:1px solid black
+
+}
+.spring2023div1,.spring2023div3 {
+    width:25%;
+    
+ }
+.spring2023div1,.spring2023div2,.spring2023div3 {
+    height:600px;
+}
+.spring2023div2 {
+    width:50%;
+    border-left:1px solid black;
+    border-right:1px solid black;
+}
+.spring2023div2 img {
+width:50%;
+height:600px;
+border:2px solid white;
+object-fit: cover;
+}
+.spring2023div1 {
+
+background-color:rgb(128, 128, 128,0.6);
+display:flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.spring2023div1 p {
+   font-size:1.8rem; 
+   line-height: 33px;
+   margin: 20px 30px 20px 30px;
+   font-weight:700;
+   line-height: 40px;;
+}
+
+.spring2023div3 {
+display:flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+background-color: #dec79b;
+}
+.spring2023div3 h2 {
+    letter-spacing: 0.8px;
+    font-size:1.6rem;
+    font-weight: 700;
+    font-family:serif;
+    margin-left:20px
+    
+}
+.spring2023div2 {
+    display: flex;
+}
+.womenheading,.menheading,.kidsheading {
+    border:2px solid white;
+    background-color:black;
+    text-align: center;
+    font-size:40px;
+    padding:15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:white;
+    cursor:pointer;
+    letter-spacing: 10px;
+}
+.card {
+    display:flex;
+    flex-direction:column;
+    width:330px;
+    border:1px solid black;
+    box-shadow:0px 0px 5px;
+    padding:10px;
+    background-color:white;
+    cursor:pointer;
+    
+}
+.cardp1 {
+    margin-left:5px;
+    margin-right: 5x;
+    font-size:17px;
+    margin-bottom:7px;
+}
+.cardp2 {
+    margin-top:17px;
+    font-size:15px
+}
+.cardimg {
+    width:300px;
+    height:400px;
+    transition:transform 1s
+
+}
+.cardflex {
+    display: flex;
+    flex-direction: row;
+    column-gap:9px;
+    justify-content: baseline;
+}
+.cardphoto {
+    margin-top:13px;
+    width:30px;
+    height:25px;
+}
+.divstars {
+    padding-top:16px;
+}
+.cardprice {
+    font-size: 25px;
+     color: black;
+     margin-top:5px;
+     margin-bottom:10px;
+     margin-left: 10px;
+     
+}
+.cardpricedel {
+    color:red;
+
+    font-size: 25px;
+   margin:10px;
+    text-decoration: line-through;
+}
+.cardimgdiv {
+    overflow: hidden;
+    width:300px;
+    height:400px;
+}
+.cardimgdiv:hover .cardimg {
+    transform: scale(1.5);
+}
+.cardstars {
+color:black
+}
+.checked {
+    color:orange
+}
+.card:hover {
+    background-color:black;
+    box-shadow:0px 30px 50px
+}
+.card:hover .cardp1, .card:hover .cardprice, .card:hover .cardp2 {
+  color:white;
+  }
+.cards {
+padding: 20px;
+display:flex;
+flex-direction:row;
+column-gap:30px;
+row-gap: 20px;;
+justify-content:center;
+align-items: center;
+flex-wrap:wrap;
+
+
+}
+.cardsfullwomen,.cardsfullmen,.cardsfullkids {
+
+display:flex;
+flex-direction: column;
+row-gap:50px;
+column-gap:35px;
+background-image: linear-gradient(#e66465, #9198e5);
+
+}
+.cardsfullkidsflex {
+    display:flex;
+    flex-direction: column;
+    row-gap:50px;
+ 
+    column-gap:20px;  
+}
+.price {
+display: flex;
+flex-direction: row;
+column-gap: 50px;
+margin-bottom:0px;
+}
+.footerprice {
+    margin-top:25px;
+    padding:0px;
+display: flex;
+flex-direction: column;
+width:450px;
+height:100px;
+row-gap:20px;
+
+
+}
+.goods {
+margin-top:15px;
+font-size:20px;
+color:white;
+width:500px;
+line-height:30px;
+transition:transform 1s;
+
+}
+.card:hover .goods {
+font-size:20px;
+color:white;
+transform:translateY(-10px)
+}
+.womendress,.womentrousers,.womenshoes,.mendress,.mentrousers,.menshoes,
+.kidsdress,.kidstrousers,.kidsshoes {
+    width:100%;
+    background-color:black;
+    text-align: center;
+    font-size:40px;
+    padding:12px 15px; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:white;
+    cursor:pointer;
+    letter-spacing: 3px;
+  border:2px solid white;
+  background-color:orange;
+
+   
+}
+.cardstrousers,.cardstrousers1,.cardstrouserskids {
+
+    padding:0px;    
+    background-image:linear-gradient(rgb(255, 165, 0,0.5),rgb(0, 128, 0,0.6))
+    
+
+
+}
+
+.womentrousers {
+    background-color: red;
+
+ 
+}
+.womenshoes {
+    background-color:#9c8e75
+}
+.cardsshoes,.cardsshoes1,.cardsshoeskids {
+    padding:0px;   
+    background-image:linear-gradient(rgb(0, 0, 255,0.5),rgb(255, 165, 0,0.7))
+}
+.mendress {
+    background-color:rgb(28, 28, 59)
+}
+.mentrousers {
+    background-color:rgb(49, 81, 49)
+}
+.menshoes {
+    background-color:rgb(81, 52, 52)
+}
+.kidsdress {
+    background-color:red;
+}
+.kidsshoes {
+    padding:10px 15px;
+    background-color:blueviolet
+}
